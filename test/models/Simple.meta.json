@@ -1,0 +1,34 @@
+{
+  "fileName": "test/models/Simple.ts",
+  "classType": [
+    {
+      "kind": 1,
+      "text": "Foo",
+      "generic": false
+    }
+  ],
+  "propsMetadata": [
+    {
+      "name": "id",
+      "propType": [
+        {
+          "kind": 1,
+          "text": "String",
+          "generic": false
+        }
+      ],
+      "optional": false
+    },
+    {
+      "name": "optTest",
+      "propType": [
+        {
+          "kind": 1,
+          "text": "String",
+          "generic": false
+        }
+      ],
+      "optional": true
+    }
+  ]
+}

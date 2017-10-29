@@ -1,0 +1,63 @@
+{
+  "fileName": "test/models/Generics.ts",
+  "classType": [
+    {
+      "kind": 1,
+      "text": "Generics",
+      "generic": false
+    },
+    [
+      {
+        "kind": 1,
+        "text": "T",
+        "generic": true
+      }
+    ]
+  ],
+  "propsMetadata": [
+    {
+      "name": "bar",
+      "propType": [
+        {
+          "kind": 1,
+          "text": "GenericBar",
+          "importDefinition": {
+            "fileName": "./assets/GenericBar",
+            "className": "GenericBar",
+            "referencedAs": "GenericBar",
+            "defaultExport": true
+          },
+          "generic": false
+        }
+      ],
+      "optional": false
+    },
+    {
+      "name": "prop",
+      "propType": [
+        {
+          "kind": 1,
+          "text": "T",
+          "generic": true
+        }
+      ],
+      "optional": false
+    },
+    {
+      "name": "array",
+      "propType": [
+        {
+          "kind": 1,
+          "text": "Array",
+          "generic": false
+        },
+        {
+          "kind": 1,
+          "text": "T",
+          "generic": true
+        }
+      ],
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "ts-class-metadata",
+  "version": "0.0.1-beta.1",
+  "description": "",
+  "keywords": [
+    "typescript",
+    "es6",
+    "ts",
+    "metadata",
+    "class",
+    "types",
+    "type",
+    "typing",
+    "properties",
+    "property"
+  ],
+  "author": "Thomas Winckell",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thomaswinckell/ts-serialize.git"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "src/**/*.js",
+    "src/**/*.d.ts",
+    "tsconfig.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clean": "rm -rf src/**/*.js && rm -rf src/**/*.d.ts && rm -rf test/**/*.js && rm -rf test/**/*.d.ts",
+    "build": "tsc",
+    "pretest": "npm run build",
+    "test": "ava test/Main.js; npm run clean",
+    "prestart": "npm run build",
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "ts-simple-ast": "0.72.2"
+  },
+  "peerDependencies": {
+    "typescript": "2.5.x"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.34",
+    "ava": "^0.22.0",
+    "typescript": "^2.5.3"
+  }
+}

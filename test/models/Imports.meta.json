@@ -1,0 +1,80 @@
+{
+  "fileName": "test/models/Imports.ts",
+  "classType": [
+    {
+      "kind": 1,
+      "text": "Foo",
+      "generic": false
+    }
+  ],
+  "propsMetadata": [
+    {
+      "name": "bar",
+      "propType": [
+        {
+          "kind": 1,
+          "text": "Bar",
+          "importDefinition": {
+            "fileName": "./assets/Bar",
+            "className": "Bar",
+            "referencedAs": "Bar",
+            "defaultExport": false
+          },
+          "generic": false
+        }
+      ],
+      "optional": false
+    },
+    {
+      "name": "renamedBar",
+      "propType": [
+        {
+          "kind": 1,
+          "text": "RenamedBar",
+          "importDefinition": {
+            "fileName": "./assets/Bar",
+            "className": "Bar",
+            "referencedAs": "RenamedBar",
+            "defaultExport": false
+          },
+          "generic": false
+        }
+      ],
+      "optional": false
+    },
+    {
+      "name": "barDefault",
+      "propType": [
+        {
+          "kind": 1,
+          "text": "DefaultBar",
+          "importDefinition": {
+            "fileName": "./assets/BarDefault",
+            "className": "DefaultBar",
+            "referencedAs": "DefaultBar",
+            "defaultExport": true
+          },
+          "generic": false
+        }
+      ],
+      "optional": false
+    },
+    {
+      "name": "renamedDefaultBar",
+      "propType": [
+        {
+          "kind": 1,
+          "text": "RenamedDefaultBar",
+          "importDefinition": {
+            "fileName": "./assets/BarDefault",
+            "className": "default",
+            "referencedAs": "RenamedDefaultBar",
+            "defaultExport": false
+          },
+          "generic": false
+        }
+      ],
+      "optional": false
+    }
+  ]
+}
