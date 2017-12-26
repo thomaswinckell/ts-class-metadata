@@ -8,8 +8,6 @@ import SyntaxKind from "./SyntaxKind";
 
 namespace Explorer {
 
-    let importDefinitions: { [fileName:string]: ImportDefinition[] } = {};
-
     function getParentWithProperty(obj: any, property: string, currentRecursionLevel = 0, maxRecursionLevel = 10): any {
 
         if(!obj) {
@@ -79,25 +77,13 @@ namespace Explorer {
         return [];
     }
 
-    function registerImportDefinition(statement: any, fileName: string) {
-
-        importsDefinitionsFromStatement(statement).forEach(id => {
-
-            if(Array.isArray(importDefinitions[fileName])) {
-                importDefinitions[fileName].push(id);
-            } else {
-                importDefinitions[fileName] = [id];
-            }
-        })
-    }
-
     export function scan(...sourceFiles: string[]) : ClassMetadata[] {
 
         const ast = new Ast();
 
-        ast.addSourceFiles(...sourceFiles);
+        ast.addExistingSourceFiles(...sourceFiles);
 
-        let classMetada : ClassMetadata[] = [];
+        let classMetadata : ClassMetadata[] = [];
 
         ast.getSourceFiles().forEach(sf => {
 
@@ -110,16 +96,26 @@ namespace Explorer {
 
             const fileName = path.relative(process.cwd(), sf.compilerNode.fileName);
 
+            let importDefinitions: { [fileName:string]: ImportDefinition[] } = {};
+
             compilerNode.statements.forEach((s: any) => {
-                registerImportDefinition(s, fileName);
+
+                importsDefinitionsFromStatement(s).forEach(id => {
+
+                    if(Array.isArray(importDefinitions[fileName])) {
+                        importDefinitions[fileName].push(id);
+                    } else {
+                        importDefinitions[fileName] = [id];
+                    }
+                })
             });
 
             sf.getClasses().forEach(cl => {
-                classMetada.push(ClassMetadata.fromDeclaration(cl, fileName, importDefinitions[fileName] || []));
+                classMetadata.push(ClassMetadata.fromDeclaration(cl, fileName, importDefinitions[fileName] || []));
             });
         });
 
-        return classMetada;
+        return classMetadata;
     }
 }
 
